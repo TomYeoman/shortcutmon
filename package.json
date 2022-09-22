@@ -1,0 +1,101 @@
+{
+  "name": "Shortcutmon",
+  "engines": {
+    "node": ">=v16.17.0"
+  },
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@headlessui/react": "^1.6.1",
+    "@heroicons/react": "^1.0.6",
+    "@reduxjs/toolkit": "^1.8.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^16.4.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^18.0.4",
+    "@types/react-router": "^5.1.18",
+    "@types/react-router-dom": "^5.3.3",
+    "electron-active-window": "^0.0.6",
+    "electron-is-dev": "^2.0.0",
+    "electron-log": "^4.4.8",
+    "find-process": "^1.4.7",
+    "heroicons": "^1.0.6",
+    "luxon": "^3.0.3",
+    "ps-node": "^0.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-hotkeys": "^2.0.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^5",
+    "react-select": "^5.4.0",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.2",
+    "tailwindcss": "^3.0.24",
+    "typeorm": "^0.2.34",
+    "typescript": "^4.1.2",
+    "uiohook-napi": "^1.4.0",
+    "victory": "^36.6.6",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "___FRONTEND___": "",
+    "dev-frontend": "rescripts start",
+    "build-frontend": "rescripts build",
+    "test": "rescripts test",
+    "eject": "react-scripts eject",
+    "___SERVER___": "",
+    "build-server": "tsc",
+    "run-server": "electron ./build/server/electron.js",
+    "dev-server": "yarn build-server && yarn run-server",
+    "dev": "concurrently \"yarn build-server && yarn dev-frontend\" \"wait-on http://localhost:3000 && electron ./build/server/electron.js\"",
+    "___RELEASE___": "",
+    "build": "yarn build-frontend && yarn build-server",
+    "preelectron-pack": "yarn cleanup && yarn build",
+    "postinstall": "electron-builder install-app-deps",
+    "electron-pack": "ts-node ./builder.ts",
+    "___UTILS___": "",
+    "cleanup": "rimraf ./build && rimraf ./dist"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.16",
+    "@rescripts/rescript-env": "^0.0.14",
+    "@types/luxon": "^3.0.1",
+    "autoprefixer": "^10.4.7",
+    "concurrently": "^6.2.0",
+    "electron": "^20",
+    "electron-builder": "^22.11.7",
+    "node-gyp": "^9.1.0",
+    "postcss": "^8.4.13",
+    "react-scripts": "5.0.1",
+    "ts-node": "^10.9.1",
+    "wait-on": "^6.0.0"
+  },
+  "main": "public/server/electron.js",
+  "homepage": "./",
+  "build": {
+    "extraMetadata": {
+      "main": "build/server/electron.js"
+    }
+  }
+}
