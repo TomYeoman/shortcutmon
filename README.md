@@ -1,13 +1,11 @@
 <a href="https://www.patreon.com/user?u=79999206"><img src="https://img.shields.io/badge/dynamic/json?color=%23e85b46&label=Patreon&query=data.attributes.patron_count&suffix=%20patrons&url=https%3A%2F%2Fwww.patreon.com%2Fapi%2Fcampaigns%2F9296816" /> </a>
 ## Overview
 
-A tool to help you remember shortcuts across any application.
+Shortcut monitor (shortcutmon) is the low friction way to remember to use all those useful shortcuts you’ve been meaning to learn for years.
 
-Shortcutmon allows you to define a shortcut (or alternatively a "key combination" / "phrase" - good for things like remembering to use snippets), an application (E.G "Chrome.exe"), and a time frame you wish to be notified after (E.G "10 minutes").
+Define one or more shortcuts (or alternatively a "key combination" / "phrase"), with an associated application (E.G "Chrome.exe"), and a time frame you wish to be notified after (E.G "10 minutes").
 
-Given you have not used the shortcut within the application, within those X minutes, you will receive a notification reminding you to use it (with the ability to temporarily disable notifications if you need).
-
-You can also view usage statistics for any given key combination.
+Easily monitor whether you're improving, through the usage statistics (see [screenshots](#screenshots))
 
 ## Supported operating systems
 Unfortunately only windows is supported on initial release, with plans to build for mac + linux soon.
@@ -27,11 +25,11 @@ A small cache of recent keypresses is stored in memory only to detect when a sho
 
 ## Roadmap
 
-- Get build working across multiple platforms (tested on windows currently), the main issue is with some of the native modules (namely `electron-active-window` and `uiohook-napi`).
+- Build extensions for chrome / vscode that can integrate with shortcutmon, in order to provide more granular detail (E.G are we working on a specific language, if so we may only want to activate particular shortcut / snipper reminders).
+- Release on multiple platforms (tested on windows currently). The main issue is with some of the native modules (namely `electron-active-window` and `uiohook-napi`).
+  - Once sorted, add log in & sync across devices.
 - Add collections of useful shortcuts for specific applications, in order to easily populate your shortcut list.
 - Time of day filtering, if you have for example some shortcuts you only use during work hours.
-- Log in support, to sync across
-- Build extensions for chrome / vscode that can integrate with shortcutmon, in order to provide more granular detail (E.G are we working on a specific language, if so we may only want to activate shortcuts when we're working on a particular language in VS Code)
 - Tidy up code base further (add tests, migrate entirely to ipcRenderer messaging from the client).
 
 ## Contributing
